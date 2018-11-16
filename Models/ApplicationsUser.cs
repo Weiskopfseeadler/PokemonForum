@@ -1,8 +1,9 @@
 using System;
+using Microsoft.AspNetCore.Identity;
 
 namespace ForumPokemon.Models
 {
-    public class ApplicationsUser
+    public class ApplicationsUser : IdentityUser
     {
         public long UserID {get; set;}
         public string Username {get; set;}
