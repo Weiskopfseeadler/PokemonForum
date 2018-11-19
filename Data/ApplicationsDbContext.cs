@@ -30,8 +30,6 @@ namespace PokemonForum.Data
                 .RuleFor(a => a.Title, f => f.Lorem.Slug(8));
                 
 
-                
-
             var artIds = 1;
             var testArticle = new Faker<Article>()
                 .RuleFor(art => art.ArticleID, () => artIds++)
