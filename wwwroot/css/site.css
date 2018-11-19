@@ -2,7 +2,8 @@
 for details on configuring this project to bundle and minify static web assets. */
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 100px;
+    background-color: brown
 }
 
 /* Wrapping element */
