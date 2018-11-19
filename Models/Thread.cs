@@ -8,7 +8,7 @@ namespace ForumPokemon.Models
     {
         public long ThreadID {get; set;}
         public string Title{get; set;}
-        public string ImagePath {get; set;}
+
         public ICollection<Article> Articles {get; set;}
     }
 }
