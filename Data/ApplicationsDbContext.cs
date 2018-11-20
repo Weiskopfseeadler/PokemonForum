@@ -84,11 +84,12 @@ namespace PokemonForum.Data
 
              foreach(var user in testUser.Generate(10))
             {
-                user.Add(new {
-                    ApplicationUserId = user.ApplicationUserId,
+                ApplicationsUser.Add(new {
+                    ApplicationsUserID = user.ApplicationsUserID,
                     Username = user.Username,
                     Password=user.Password,
                     Avatar =images[(rnd.Next(1, imageIds))]
+         
          
                 });
             }

@@ -11,7 +11,11 @@ namespace ForumPokemon.Models
         
         //public string Email {get; set;}
         public Image Avatar {get; set;}
-        
+
+        internal static void Add(object p)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     
