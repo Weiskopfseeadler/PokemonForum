@@ -1,24 +1,27 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 .navbar-inverse{
-    background-color: #FF8900;
+    background-color: #FF8900
 }
-
-.navbar-inverse .navbar-brand {
+.fanArtDisplay{
+    display: flex;
+    margin-top: 50vh;
     
-    color: #D64200;
+}
+.fanArt {
+max-width: 60vw;
+max-height: 30vh; 
+
 }
 
-.navbar-inverse .navbar-nav>li>a {
+.navbar-brand {
     color: #D64200;
+    padding: 10px;
 }
 
-.navbar-inverse .btn-link {
+a {
     color: #D64200;
-}
-
-img {
-    vertical-align: top;
+    padding: 10px;
 }
 
 body {
@@ -32,6 +35,7 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    
 }
 
 /* Carousel */

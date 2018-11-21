@@ -1,10 +1,10 @@
 @model PokemonForum.Models.FanArtViewModel
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "FanArts";
 }
-<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <div class="fanArtDisplay">
-    @foreach (var item in Model.Imagelist) {
-        <img class="fanArt" src= item.Path>
-}
+    @foreach (var item in Model.Imagelist) 
+    {    
+        <img class="fanArt" src= "~"+item.Path alt=item.Name>
+    }
 </div>
