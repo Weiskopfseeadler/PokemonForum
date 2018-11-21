@@ -1,25 +1,29 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
+.banner {
+    max-height: 15vh;
+    width: 100%;
+}
+
 .navbar-inverse{
     background-color: #FF8900
 }
-<<<<<<< HEAD
 
 .navbar-inverse .navbar-brand {
     font-size: 22px;
     color: #D64200;
-=======
+}
 .fanArtDisplay{
     display: flex;
     margin-top: 50vh;
     
->>>>>>> ceaf16c9847b164af5b8886ca4414563f9a6442f
 }
+
 .fanArt {
 max-width: 60vw;
 max-height: 30vh; 
+}
 
-<<<<<<< HEAD
 .navbar-inverse .navbar-brand:hover {
     background-color: #EB6200;
 }
@@ -31,13 +35,10 @@ max-height: 30vh;
 
 .navbar-inverse .navbar-nav>li>a:hover {
     background-color: #EB6200;
-=======
->>>>>>> ceaf16c9847b164af5b8886ca4414563f9a6442f
 }
 
 .navbar-brand {
     color: #D64200;
-<<<<<<< HEAD
     font-size: 20px;
     margin: 0px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -53,6 +54,10 @@ a {
 }
 
 .sidebar{
+    margin-top: 30vh;
+    text-align: left;
+    
+    display: flex;
     left: 0;
     height: 100%;
     width: 100px;
@@ -60,9 +65,7 @@ a {
 
 .sidebar h1{
     font-size: 10px;
-=======
     padding: 10px;
->>>>>>> ceaf16c9847b164af5b8886ca4414563f9a6442f
 }
 
 a {
