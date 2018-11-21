@@ -5,16 +5,47 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .navbar-inverse .navbar-brand {
-    
+    font-size: 22px;
     color: #D64200;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    background-color: #EB6200;
 }
 
 .navbar-inverse .navbar-nav>li>a {
     color: #D64200;
+    font-size: 20px;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    background-color: #EB6200;
 }
 
 .navbar-inverse .btn-link {
     color: #D64200;
+    font-size: 20px;
+    margin: 0px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.navbar-inverse .btn-link:hover {
+    background-color: #EB6200;
+}
+
+a {
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 20px;
+}
+
+.sidebar{
+    left: 0;
+    height: 100%;
+    width: 100px;
+}
+
+.sidebar h1{
+    font-size: 10px;
 }
 
 img {
