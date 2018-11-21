@@ -5,7 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using ForumPokemon.Models;
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
+=======
+>>>>>>> 332f734a9b018a1631215b3df6af80983d0d5366
 using PokemonForum.Data;
 using PokemonForum.Models;
 
@@ -15,12 +18,19 @@ namespace PokemonForum.Controllers
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;
+<<<<<<< HEAD
         
         public HomeController(ApplicationDbContext context){
             _context = context;
         }
 
         
+=======
+
+        public HomeController(ApplicationDbContext context){
+            _context = context;
+        }
+>>>>>>> 332f734a9b018a1631215b3df6af80983d0d5366
 
        
         public IActionResult Index()
@@ -60,3 +70,4 @@ namespace PokemonForum.Controllers
         }
     }
 }
+
