@@ -2,8 +2,9 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<div>
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<div class="fanArtDisplay">
     @foreach (var item in Model.Imagelist) {
-        <img src= item.Path>
+        <img class="fanArt" src= item.Path>
 }
 </div>
