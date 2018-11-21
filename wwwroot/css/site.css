@@ -1,17 +1,24 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 .navbar-inverse{
-    background-color: #FF8900
+    background-color: #FF8900;
 }
 
-.navbar-brand {
+.navbar-inverse .navbar-brand {
+    
     color: #D64200;
-    padding: 10px;
 }
 
-a {
+.navbar-inverse .navbar-nav>li>a {
     color: #D64200;
-    padding: 10px;
+}
+
+.navbar-inverse .btn-link {
+    color: #D64200;
+}
+
+img {
+    vertical-align: top;
 }
 
 body {
