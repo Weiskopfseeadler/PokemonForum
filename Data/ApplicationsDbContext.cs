@@ -33,13 +33,19 @@ namespace PokemonForum.Data
             var artIds = 1;
             var testArticle = new Faker<Article>()
                 .RuleFor(art => art.ArticleID, () => artIds++)
-                .RuleFor(art => art.Text, f => f.Lorem.Slug(100));
+                .RuleFor(art => art.Text, f => f.Lorem.Slug(100))
+                .RuleFor(art => art.Time, f => f.Date.Past());
 
             var userIds = 1;
             var testUser = new Faker<ApplicationsUser>()
-                .RuleFor(usr => usr.ApplicationsUserID,  () => userIds++)
-                .RuleFor(usr => usr.Username, f => f.Name.LastName())
-                .RuleFor(usr => usr.Email, "Password");
+                .RuleFor(usr => usr.ApplicationsUserID, () => userIds++)
+                .RuleFor(usr => usr.Id, f => f.Internet.UserName())
+                .RuleFor(usr => usr.NickName, f => f.Name.FirstName())
+                .RuleFor(usr => usr.Email, f=> f.Internet.Email())
+                .RuleFor(usr => usr.AccessFailedCount, () => 0)
+                .RuleFor(usr => usr.EmailConfirmed, () => true)
+                .RuleFor(usr => usr.LockoutEnabled, () => false);
+
 
             var imageIds = 1;
             var TestImage = new Faker<Image>()
@@ -50,7 +56,7 @@ namespace PokemonForum.Data
             var images = new List<dynamic>();
             var threads = new List<dynamic>();
             var articles = new List<dynamic>();
-            var applicationsUsers = new List<ApplicationsUser>();
+            var applicationsUsers = new List<dynamic>();
 
             var rnd = new Random();
 
@@ -68,39 +74,62 @@ namespace PokemonForum.Data
                 threads.Add(new
                 {
                     ThreadID = thread.ThreadID, // genau auf die Schreibweise achten! -> kein Intellisense
-                    Name = thread.Title
+                    Title = thread.Title
                     
                 });
             }
 
             foreach(var article in testArticle.Generate(5)) // thread, thema, Team
             {
-                threads.Add(new
+                articles.Add(new
                 {
                     ArticleID = article.ArticleID, // genau auf die Schreibweise achten! -> kein Intellisense
-                    Text = article.Text
+                    ThreadId =rnd.Next(1, threadIds),
+                    Text = article.Text,
+                    Time = article.Time  
                 });
             }
 
-             foreach(var user in testUser.Generate(10))
+            foreach(var user in testUser.Generate(10))
             {
-                ApplicationsUser.Add(new {
-                    ApplicationsUserID = user.ApplicationsUserID,
-                    Username = user.Username,
-                    Password=user.Password,
-                    Avatar =images[(rnd.Next(1, imageIds))]
-         
-         
+                applicationsUsers.Add(new
+                {
+                    ApplicationsUserID =  user.ApplicationsUserID,
+                    Id = user.Id,                
+                    NickName = user.NickName,
+                    Email = user.Email,
+                    AccessFailedCount = user.AccessFailedCount,
+                    EmailConfirmed = user.EmailConfirmed,
+                    LockoutEnabled = user.LockoutEnabled,
+                    PhoneNumberConfirmed = true,
+                    TwoFactorEnabled = false,
                 });
+                
+  
+                
             }
 
-
-            modelBuilder.Entity<Thread>().HasData(threads.ToArray());
+/*
+            modelBuilder.Entity<Thread>().HasData(thread.ToArray())
             modelBuilder.Entity<Article>().HasData(articles.ToArray());
             modelBuilder.Entity<Image>().HasData(images.ToArray());
-            base.OnModelCreating(modelBuilder);
             
-            modelBuilder.Entity<ApplicationsUser>().HasData(applicationsUsers.ToArray());
+            
+            modelBuilder.Entity<ApplicationsUser>().HasData(applicationsUsers.ToArray());*/
+             modelBuilder.Entity<ApplicationsUser>().HasData(applicationsUsers.ToArray());
+
+            // add todoitem
+            modelBuilder.Entity<Image>().HasData(images.ToArray());
+
+            // add role
+            modelBuilder.Entity<Thread>().HasData(threads.ToArray());
+
+            // add user
+            modelBuilder.Entity<Article>().HasData(articles.ToArray());
+
+            // add assignment
+           
+           base.OnModelCreating(modelBuilder);
         }
     }
 }
