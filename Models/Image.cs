@@ -7,5 +7,6 @@ namespace ForumPokemon.Models
         public long ImageID {get; set;}
         public string Name {get; set;}
         public string Path {get; set;}
+        public bool isAvatar {get;set;}
     }
 }
