@@ -56,12 +56,10 @@ a {
 .sidebar{
     margin-top: 30vh;
     text-align: left;
-    
-    display: flex;
+    position: fixed;
     left: 0;
     height: 100%;
-    width: 100px;
-    align-content: block;
+    width: 10vh;
 }
 
 .sidebar h1{
@@ -85,7 +83,7 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    
+    margin-left: 10vh;
 }
 
 /* Carousel */
