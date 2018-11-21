@@ -1,14 +1,25 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 .navbar-inverse{
-    background-color: #FF8900;
+    background-color: #FF8900
 }
+<<<<<<< HEAD
 
 .navbar-inverse .navbar-brand {
     font-size: 22px;
     color: #D64200;
+=======
+.fanArtDisplay{
+    display: flex;
+    margin-top: 50vh;
+    
+>>>>>>> ceaf16c9847b164af5b8886ca4414563f9a6442f
 }
+.fanArt {
+max-width: 60vw;
+max-height: 30vh; 
 
+<<<<<<< HEAD
 .navbar-inverse .navbar-brand:hover {
     background-color: #EB6200;
 }
@@ -20,10 +31,13 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .navbar-inverse .navbar-nav>li>a:hover {
     background-color: #EB6200;
+=======
+>>>>>>> ceaf16c9847b164af5b8886ca4414563f9a6442f
 }
 
-.navbar-inverse .btn-link {
+.navbar-brand {
     color: #D64200;
+<<<<<<< HEAD
     font-size: 20px;
     margin: 0px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -46,10 +60,14 @@ a {
 
 .sidebar h1{
     font-size: 10px;
+=======
+    padding: 10px;
+>>>>>>> ceaf16c9847b164af5b8886ca4414563f9a6442f
 }
 
-img {
-    vertical-align: top;
+a {
+    color: #D64200;
+    padding: 10px;
 }
 
 body {
@@ -63,6 +81,7 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    
 }
 
 /* Carousel */
