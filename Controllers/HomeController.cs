@@ -5,10 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ForumPokemon.Models;
 using Microsoft.AspNetCore.Mvc;
-<<<<<<< HEAD
 using Microsoft.EntityFrameworkCore;
-=======
->>>>>>> 332f734a9b018a1631215b3df6af80983d0d5366
 using PokemonForum.Data;
 using PokemonForum.Models;
 
@@ -18,29 +15,21 @@ namespace PokemonForum.Controllers
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;
-<<<<<<< HEAD
         
         public HomeController(ApplicationDbContext context){
             _context = context;
         }
-
-        
-=======
-
-        public HomeController(ApplicationDbContext context){
-            _context = context;
-        }
->>>>>>> 332f734a9b018a1631215b3df6af80983d0d5366
 
        
         public IActionResult Index()
         {
             return View();
         }
-
+        
+        [HttpGet]
         public IActionResult FanArts()
         {
-            ViewData["Message"] = "Your application description page.";
+            //ViewData["Message"] = "Your application description page.";
   
             var images = _context.Images.Where(a => a.isAvatar == false).ToList();
           
@@ -51,6 +40,7 @@ namespace PokemonForum.Controllers
             return View(viewModel); 
         }
 
+        [HttpGet]
         public IActionResult Forum()
         {
             ViewData["Message"] = "Your contact page.";
