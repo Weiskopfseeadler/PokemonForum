@@ -1,0 +1,9 @@
+@model PokemonForum.Models.FanArtViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div>
+    @foreach (var item in Model.Imagelist) {
+        <img src= item.Path>
+}
+</div>

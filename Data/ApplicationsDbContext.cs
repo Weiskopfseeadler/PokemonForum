@@ -51,7 +51,8 @@ namespace PokemonForum.Data
             var TestImage = new Faker<Image>()
                 .RuleFor(imag => imag.ImageID, () => imageIds++)
                 .RuleFor(imag => imag.Name,f => f.Name.LastName())
-                .RuleFor(imag => imag.Path, @"C:\Users\vmadmin\Desktop\PokemonForum\nothing");
+                .RuleFor(imag => imag.Path, @"C:\Users\vmadmin\Desktop\PokemonForum\nothing")
+                .RuleFor(imag => imag.isAvatar,f => f.Random.Bool());
 
             var images = new List<dynamic>();
             var threads = new List<dynamic>();
@@ -64,7 +65,8 @@ namespace PokemonForum.Data
                 images.Add(new{
                 Name =  imag.Name,
                 ImageID = imag.ImageID,
-                Path = imag.Path
+                Path = imag.Path,
+                isAvatar = imag.isAvatar
                 });
               
             }
