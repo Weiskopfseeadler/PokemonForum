@@ -1,0 +1,10 @@
+@model PokemonForum.Models.ForumThreadViewModel
+@{
+    ViewData["Title"] = " Forum";
+}
+<div> @ViewData["thread.Title"] </div>
+@foreach (var art in Model.thread.Articles)
+{
+    <div> (art as Articles).Text </div>
+}
+<input type="text" asp-for="newArticle.Text">

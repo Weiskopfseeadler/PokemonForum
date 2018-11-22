@@ -1,4 +1,9 @@
-@model PokemonForum.Models.FanArtViewModel
+@model PokemonForum.Models.ForumViewModel
 @{
     ViewData["Title"] = " Forum";
+}
+<div> </div>
+@foreach (var item in Model.threadList)
+{
+    <a asp-area="" asp-controller="Home" asp-action="ForumThread">item.Title</a>
 }

@@ -15,38 +15,66 @@ namespace PokemonForum.Controllers
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;
-        
-        public HomeController(ApplicationDbContext context){
+
+        public HomeController(ApplicationDbContext context)
+        {
             _context = context;
         }
 
-       
+
         public IActionResult Index()
         {
             return View();
         }
-        
+
         [HttpGet]
         public IActionResult FanArts()
         {
             //ViewData["Message"] = "Your application description page.";
-  
-            var images = _context.Images.Where(a => a.isAvatar == false).ToList();
-          
-            var viewModel = new FanArtViewModel(){             
-                Imagelist = images                 
-             };            
-            
-            return View(viewModel); 
-        }
 
-        [HttpGet]
+            var images = _context.Images.Where(a => a.isAvatar == false).ToList();
+
+            var viewModel = new FanArtViewModel()
+            {
+                Imagelist = images
+            };
+
+            return View(viewModel);
+        }
         public IActionResult Forum()
         {
             ViewData["Message"] = "Your contact page.";
-
+           
+         var viewModel = new ForumViewModel()
+            {
+                threadList = _context.Threads.Where(a => a.ThreadID >0).ToList()
+            };
             return View();
         }
+
+[HttpGet]
+        public IActionResult ForumThread(long ID)
+        {
+            ViewData["Message"] = "Your contact page.";
+           
+         var viewModel = new ForumThreadViewModel()
+            {
+                thread= _context.Threads.Find(ID)
+            };
+            return View();
+        }
+
+
+        /*[HttpPost]
+        public IActionResult Forum(long id, Article article)
+        {
+            var existingArea = _context.Threads.Find(id);
+            existingArea.Title = area.Name;
+            existingArea.AssigneesNeeded = area.AssigneesNeeded;
+            _context.Areas.Update(existingArea);
+            _context.SaveChanges();
+        }*/
+
 
         public IActionResult Privacy()
         {
