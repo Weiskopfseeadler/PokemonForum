@@ -2,9 +2,10 @@
 @{
     ViewData["Title"] = "FanArts";
 }
+
 <div class="fanArtDisplay">
-    @foreach (var item in Model.Imagelist) 
+    @foreach (var imag in Model.Imagelist) 
     {    
-        <img class="fanArt" src= "~"+item.Path alt=item.Name>
+        <img class="fanArt" src= imag.Path alt=imag.Name>
     }
 </div>
