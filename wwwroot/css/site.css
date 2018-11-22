@@ -16,7 +16,12 @@ for details on configuring this project to bundle and minify static web assets. 
 .fanArtDisplay{
     display: flex;
     margin-top: 50vh;
-    
+}
+
+.navbar-inverse .btn-link {
+    color: #D64200;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .fanArt {
@@ -48,18 +53,27 @@ max-height: 30vh;
     background-color: #EB6200;
 }
 
-a {
-     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.navbar-collapse a{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
      font-size: 20px;
 }
 
+.row{
+    margin-top: 15vh;
+}
+
 .sidebar{
-    margin-top: 30vh;
+    margin-top: 15vh;
     text-align: left;
     position: fixed;
     left: 0;
     height: 100%;
     width: 10vh;
+}
+
+.sidebar a{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 20px;
 }
 
 .sidebar h1{
@@ -76,6 +90,11 @@ body {
     padding-top: 50px;
     padding-bottom: 100px;
     background: #F79800;
+}
+
+.icon {
+    width: 12vh;
+    height: 12vh;
 }
 
 /* Wrapping element */
@@ -103,7 +122,7 @@ body {
 }
 
 /* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 967px) {
     /* Hide captions */
     .carousel-caption {
         display: none;
