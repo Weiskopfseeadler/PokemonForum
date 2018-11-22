@@ -4,6 +4,9 @@ for details on configuring this project to bundle and minify static web assets. 
     max-height: 15vh;
     width: 100%;
 }
+.blocker{
+    margin-top: 20vh;
+}
 
 .navbar-inverse{
     background-color: #FF8900

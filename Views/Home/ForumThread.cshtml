@@ -2,9 +2,11 @@
 @{
     ViewData["Title"] = " Forum";
 }
-<div> @ViewData["thread.Title"] </div>
-@foreach (var art in Model.thread.Articles)
-{
-    <div> (art as Articles).Text </div>
-}
-<input type="text" asp-for="newArticle.Text">
+<div class ="blocker"></div>
+
+
+<form action="Post" method="POST" >
+<input type="text" asp-for="text">
+<button   type="submit" asp-area="" asp-controller="Home" asp-action="ForumThread" >Senden</button>
+</form>
+
