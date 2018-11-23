@@ -6,7 +6,7 @@ namespace PokemonForum.Models
 {
     public class ForumThreadViewModel{
       public  Thread thread;
-      public Article newArticle;
+      public string text;
 
     }
     }

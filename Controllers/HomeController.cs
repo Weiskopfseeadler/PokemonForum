@@ -44,23 +44,43 @@ namespace PokemonForum.Controllers
         public IActionResult Forum()
         {
             ViewData["Message"] = "Your contact page.";
-           
-         var viewModel = new ForumViewModel()
+
+            var viewModel = new ForumViewModel()
             {
-                threadList = _context.Threads.Where(a => a.ThreadID >0).ToList()
+                threadList = _context.Threads.Where(a => a.ThreadID > 0).ToList()
             };
             return View();
         }
 
-[HttpGet]
         public IActionResult ForumThread(long ID)
         {
             ViewData["Message"] = "Your contact page.";
-           
-         var viewModel = new ForumThreadViewModel()
+
+            var viewModel = new ForumThreadViewModel()
             {
-                thread= _context.Threads.Find(ID)
+                thread = _context.Threads.Find(ID)
             };
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ForumThread(long ID, string text)
+        {
+            ViewData["Message"] = "Your contact page.";
+            
+            var newArticle = new Article(); 
+            newArticle.Text = text;
+            newArticle.Thread = _context.Threads.Find(ID);
+            newArticle.Time = DateTime.Now;
+                        
+            _context.Articles.Update(newArticle);
+            _context.SaveChanges();
+
+            var viewModel = new ForumThreadViewModel()
+            {
+                thread = _context.Threads.Find(ID)
+            };
+
+
             return View();
         }
 
