@@ -9,8 +9,8 @@ using PokemonForum.Data;
 namespace PokemonForum.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181121103858_DbSeed$")]
-    partial class DbSeed
+    [Migration("20181123080159_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,11 +40,11 @@ namespace PokemonForum.Migrations
                     b.ToTable("Articles");
 
                     b.HasData(
-                        new { ArticleID = 1L, Text = "rem-voluptatem-reprehenderit-iste-iusto-et-est-voluptates-voluptatem-eum-enim-est-nobis-aut-sit-cupiditate-perspiciatis-recusandae-et-non-eum-recusandae-cumque-culpa-consequatur-repudiandae-quia-nemo-reprehenderit-perferendis-sapiente-aut-nulla-illo-deserunt-est-maxime-excepturi-non-sit-sunt-ea-aut-dolor-in-est-eius-expedita-aut-repudiandae-doloribus-totam-aut-voluptas-esse-sed-natus-consequatur-amet-cupiditate-velit-quam-sint-magnam-accusamus-molestias-voluptas-et-excepturi-natus-omnis-aperiam-est-aspernatur-ea-nihil-magni-cupiditate-alias-rerum-optio-omnis-nihil-deleniti-voluptatem-dolores-eum-occaecati-rerum-illo-numquam-itaque-quia-est-et-sequi-necessitatibus-omnis-enim-quasi", Time = new DateTime(2018, 1, 2, 11, 18, 41, 198, DateTimeKind.Local) },
-                        new { ArticleID = 2L, Text = "officia-qui-quia-dolores-tenetur-maxime-debitis-delectus-doloribus-ea-aperiam-aut-unde-dolorem-eos-asperiores-aperiam-tempora-quis-cum-quia-doloribus-blanditiis-nisi-voluptas-quo-eaque-dolor-quia-sed-culpa-numquam-recusandae-facere-odit-voluptate-aspernatur-ut-quasi-facere-tenetur-omnis-est-et-dolor-magni-est-eos-veritatis-nesciunt-at-quia-itaque-qui-error-animi-nobis-voluptatibus-nostrum-et-impedit-optio-possimus-blanditiis-dolorem-qui-officiis-autem-porro-qui-eveniet-nobis-nesciunt-dolorum-quisquam-assumenda-nisi-aut-neque-quo-itaque-quia-sed-ab-soluta-aliquam-minima-sed-consectetur-molestias-est-sed-inventore-dolorem-quae-aliquam-quibusdam-adipisci-eum-ea", Time = new DateTime(2018, 8, 19, 19, 45, 6, 341, DateTimeKind.Local) },
-                        new { ArticleID = 3L, Text = "reiciendis-ratione-est-voluptatem-dolorem-dolorem-ipsam-tempore-quibusdam-aliquam-aut-illum-culpa-corporis-provident-culpa-impedit-est-sunt-ut-suscipit-id-quia-qui-omnis-et-sit-in-totam-aut-voluptatem-reiciendis-et-blanditiis-sapiente-doloremque-molestias-temporibus-sint-dicta-sapiente-et-qui-magnam-voluptas-ullam-deleniti-cupiditate-excepturi-cum-dicta-quam-quaerat-qui-sint-autem-itaque-aut-atque-ut-fugiat-id-quia-dolorem-odit-et-perferendis-quia-laboriosam-quas-quasi-sint-quaerat-atque-in-rem-non-tenetur-rerum-deleniti-voluptatem-consequatur-et-temporibus-rerum-qui-quisquam-voluptatibus-sed-officia-explicabo-fuga-nemo-aut-magnam-modi-expedita-sunt-ratione-itaque", Time = new DateTime(2018, 8, 9, 10, 39, 29, 938, DateTimeKind.Local) },
-                        new { ArticleID = 4L, Text = "ex-sit-aut-est-dolorem-neque-est-et-ducimus-dolorem-voluptatibus-repellat-alias-reprehenderit-accusantium-tempore-quam-itaque-vel-amet-aperiam-officia-facere-voluptate-dignissimos-laborum-veniam-incidunt-ex-vel-quidem-consequatur-rerum-adipisci-autem-fuga-illo-sit-porro-similique-rerum-quod-sunt-nihil-aut-et-corporis-qui-tempora-omnis-labore-harum-voluptas-facere-magnam-voluptas-et-animi-neque-iste-debitis-perspiciatis-necessitatibus-harum-non-ipsum-ab-consequatur-mollitia-ea-dolorum-ut-eius-consequatur-labore-nostrum-et-sit-ullam-vel-nemo-cumque-consequatur-aut-in-alias-ipsa-adipisci-earum-doloremque-adipisci-blanditiis-sit-neque-est-in-at-blanditiis-saepe-itaque", Time = new DateTime(2018, 4, 24, 15, 27, 21, 372, DateTimeKind.Local) },
-                        new { ArticleID = 5L, Text = "dolores-doloribus-qui-non-alias-velit-a-excepturi-sapiente-voluptatem-aspernatur-corporis-ut-dolore-quia-ut-dicta-inventore-cupiditate-magni-vero-accusamus-similique-non-dolorem-eius-inventore-sed-voluptas-odio-quae-iusto-ea-labore-vel-quo-sit-officiis-sunt-deserunt-dicta-soluta-voluptatibus-voluptas-explicabo-voluptatem-libero-sint-sint-eos-assumenda-in-quis-consequatur-quisquam-et-quam-laborum-voluptas-repellendus-ex-quo-tempore-occaecati-eius-nam-earum-aut-et-laudantium-ex-non-atque-recusandae-ipsa-dolor-rerum-et-sed-perferendis-unde-qui-id-voluptatibus-tempore-facilis-et-unde-sint-amet-nostrum-sunt-odit-repellendus-ut-magnam-aut-praesentium-perspiciatis-et", Time = new DateTime(2018, 9, 6, 15, 47, 12, 941, DateTimeKind.Local) }
+                        new { ArticleID = 1L, Text = "tenetur-beatae-rem-voluptas-dolorem-distinctio-dolores-labore-ipsam-dolorem-voluptas-molestias-nostrum-asperiores-voluptatum-illum-et-minima-facilis-ut-dolore-officia-ut-voluptatum-nobis-et-aut-recusandae-velit-maxime-voluptatem-qui-illum-officiis-quaerat-enim-sit-consequuntur-non-expedita-omnis-inventore-aut-accusantium-enim-praesentium-nam-magni-ullam-alias-saepe-possimus-laborum-ullam-sed-commodi-vel-asperiores-beatae-et-vero-natus-eaque-sunt-cum-eaque-eligendi-quam-minus-dolorem-corrupti-corrupti-facere-doloribus-adipisci-consectetur-in-labore-sed-modi-et-cum-quidem-adipisci-pariatur-qui-sed-occaecati-facere-saepe-dolores-suscipit-ab-est-quibusdam-numquam-sit-odio-aliquid-incidunt", Time = new DateTime(2018, 2, 16, 1, 53, 31, 231, DateTimeKind.Local) },
+                        new { ArticleID = 2L, Text = "et-qui-dolores-sint-voluptate-alias-dolorum-odit-non-temporibus-sunt-temporibus-vero-soluta-sit-molestiae-voluptas-quisquam-minima-sint-quia-nam-quo-libero-voluptatem-odio-ratione-adipisci-reiciendis-ipsum-eos-necessitatibus-aut-blanditiis-repellat-minima-quas-soluta-dignissimos-reprehenderit-et-velit-dolorem-odit-molestiae-perspiciatis-adipisci-molestiae-laborum-nostrum-quia-quisquam-quasi-ipsam-deserunt-in-natus-laudantium-commodi-ut-vero-molestiae-consequuntur-possimus-et-soluta-illum-in-nobis-et-nihil-neque-minima-necessitatibus-quam-omnis-voluptas-qui-maxime-est-dolore-eius-culpa-est-repellat-esse-qui-expedita-eos-quam-porro-eaque-voluptatem-rem-provident-quasi-quis-quasi-blanditiis-et", Time = new DateTime(2018, 3, 3, 17, 15, 0, 210, DateTimeKind.Local) },
+                        new { ArticleID = 3L, Text = "autem-et-impedit-accusamus-perferendis-odio-dolor-saepe-fugiat-id-eum-porro-facere-est-rerum-nulla-odio-possimus-ut-eos-neque-sed-ut-amet-eum-voluptas-aut-ex-ut-rem-assumenda-ad-et-rerum-qui-reiciendis-officiis-qui-voluptatibus-aut-rerum-voluptas-doloremque-soluta-necessitatibus-quia-error-placeat-saepe-tempora-pariatur-enim-eius-eum-error-aliquam-reiciendis-occaecati-atque-ipsum-quidem-dolorem-perspiciatis-ea-ut-omnis-numquam-accusamus-enim-distinctio-aut-dolorum-omnis-quaerat-eius-qui-molestias-qui-exercitationem-veritatis-minima-illo-praesentium-quia-fuga-blanditiis-illo-sed-voluptatem-velit-repellat-aliquid-suscipit-vel-laboriosam-illum-eius-libero-impedit-suscipit", Time = new DateTime(2018, 10, 15, 19, 4, 26, 326, DateTimeKind.Local) },
+                        new { ArticleID = 4L, Text = "eligendi-deleniti-ut-magnam-tempora-sed-sapiente-dolorem-dolorem-maxime-reprehenderit-modi-nihil-necessitatibus-qui-commodi-quam-minus-sint-dolores-aspernatur-omnis-architecto-distinctio-fuga-veniam-sapiente-et-in-dolor-quo-debitis-sapiente-a-officia-in-tempora-officiis-qui-sint-explicabo-tenetur-voluptatem-qui-est-consequuntur-repudiandae-et-possimus-qui-quibusdam-itaque-adipisci-quo-consequatur-qui-ea-sunt-et-rerum-in-ipsa-voluptas-doloribus-voluptates-sint-voluptatem-totam-corporis-consequatur-eos-unde-suscipit-mollitia-ea-ratione-in-dolorum-illo-dolores-quis-ipsa-dolorem-hic-vel-ut-soluta-quia-hic-dignissimos-ipsum-expedita-et-qui-nisi-illo-amet-nesciunt-perspiciatis-sunt", Time = new DateTime(2018, 1, 12, 7, 12, 36, 860, DateTimeKind.Local) },
+                        new { ArticleID = 5L, Text = "ducimus-et-placeat-ipsam-magnam-animi-animi-iusto-eos-quod-repellendus-sint-magni-in-provident-officiis-vel-laborum-consequatur-quo-qui-sint-eos-quo-deleniti-corporis-aut-magnam-ut-a-labore-beatae-delectus-harum-et-molestiae-esse-harum-magni-ullam-vitae-nobis-sunt-nihil-iure-qui-fugit-debitis-vel-dolor-quis-unde-sed-aliquam-quisquam-non-possimus-voluptates-quo-rerum-quisquam-ut-dicta-ut-et-nihil-omnis-dolores-et-odit-praesentium-sit-atque-impedit-possimus-blanditiis-molestiae-sequi-qui-laboriosam-consectetur-alias-odio-ipsum-officia-eligendi-perspiciatis-impedit-repudiandae-asperiores-libero-molestias-quibusdam-sit-in-minus-mollitia-amet-sed-soluta", Time = new DateTime(2018, 4, 21, 21, 35, 1, 431, DateTimeKind.Local) }
                     );
                 });
 
@@ -64,11 +64,11 @@ namespace PokemonForum.Migrations
                     b.ToTable("Images");
 
                     b.HasData(
-                        new { ImageID = 1L, Name = "McCullough", Path = "C:\\Users\\vmadmin\\Desktop\\PokemonForum\\nothing", isAvatar = true },
-                        new { ImageID = 2L, Name = "Ritchie", Path = "C:\\Users\\vmadmin\\Desktop\\PokemonForum\\nothing", isAvatar = false },
-                        new { ImageID = 3L, Name = "Dietrich", Path = "C:\\Users\\vmadmin\\Desktop\\PokemonForum\\nothing", isAvatar = false },
-                        new { ImageID = 4L, Name = "Schimmel", Path = "C:\\Users\\vmadmin\\Desktop\\PokemonForum\\nothing", isAvatar = false },
-                        new { ImageID = 5L, Name = "Cummerata", Path = "C:\\Users\\vmadmin\\Desktop\\PokemonForum\\nothing", isAvatar = true }
+                        new { ImageID = 1L, Name = "McKenzie", Path = "~/images/nothing.jpg", isAvatar = true },
+                        new { ImageID = 2L, Name = "Gaylord", Path = "~/images/nothing.jpg", isAvatar = false },
+                        new { ImageID = 3L, Name = "Ankunding", Path = "~/images/nothing.jpg", isAvatar = false },
+                        new { ImageID = 4L, Name = "Mertz", Path = "~/images/nothing.jpg", isAvatar = false },
+                        new { ImageID = 5L, Name = "DuBuque", Path = "~/images/nothing.jpg", isAvatar = false }
                     );
                 });
 
@@ -84,11 +84,11 @@ namespace PokemonForum.Migrations
                     b.ToTable("Threads");
 
                     b.HasData(
-                        new { ThreadID = 1L, Title = "distinctio-laborum-culpa-vel-tempora-ratione-alias-impedit" },
-                        new { ThreadID = 2L, Title = "rem-dolor-illum-delectus-cupiditate-eum-unde-commodi" },
-                        new { ThreadID = 3L, Title = "non-odit-ullam-veritatis-eaque-dolores-et-facilis" },
-                        new { ThreadID = 4L, Title = "hic-exercitationem-ipsam-quasi-aut-necessitatibus-esse-ut" },
-                        new { ThreadID = 5L, Title = "possimus-numquam-iusto-sed-ea-ea-quaerat-dolore" }
+                        new { ThreadID = 1L, Title = "et-molestias-quidem-sapiente-et-ut-sint-sed" },
+                        new { ThreadID = 2L, Title = "excepturi-et-eos-molestiae-impedit-sit-aliquam-amet" },
+                        new { ThreadID = 3L, Title = "maiores-dicta-ut-numquam-iure-et-saepe-ex" },
+                        new { ThreadID = 4L, Title = "ipsam-enim-exercitationem-voluptas-at-eaque-ut-a" },
+                        new { ThreadID = 5L, Title = "quia-omnis-illum-excepturi-aperiam-aliquam-enim-commodi" }
                     );
                 });
 
@@ -277,16 +277,16 @@ namespace PokemonForum.Migrations
                     b.HasDiscriminator().HasValue("ApplicationsUser");
 
                     b.HasData(
-                        new { Id = "Keely50", AccessFailedCount = 0, Email = "Humberto_Runolfsson@hotmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 1L, NickName = "Kaylee" },
-                        new { Id = "Libbie.Kunde21", AccessFailedCount = 0, Email = "Rosie.Mayer@hotmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 2L, NickName = "Daphnee" },
-                        new { Id = "Laura78", AccessFailedCount = 0, Email = "Mavis42@hotmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 3L, NickName = "Bennett" },
-                        new { Id = "Destiney_Pfannerstill65", AccessFailedCount = 0, Email = "Betty_Renner@yahoo.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 4L, NickName = "Kayli" },
-                        new { Id = "Weldon.King35", AccessFailedCount = 0, Email = "Alana_Halvorson@gmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 5L, NickName = "Karson" },
-                        new { Id = "Rita.Schultz87", AccessFailedCount = 0, Email = "Crystal.Robel31@yahoo.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 6L, NickName = "Mikel" },
-                        new { Id = "Floyd.Schowalter55", AccessFailedCount = 0, Email = "Mossie_Stamm61@gmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 7L, NickName = "Margarette" },
-                        new { Id = "Pietro_Kuvalis15", AccessFailedCount = 0, Email = "Roy85@hotmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 8L, NickName = "Margarita" },
-                        new { Id = "Zachariah_Bahringer", AccessFailedCount = 0, Email = "Jonathon_Torphy13@yahoo.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 9L, NickName = "Noel" },
-                        new { Id = "Elwin.Glover", AccessFailedCount = 0, Email = "Beatrice86@yahoo.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 10L, NickName = "Janick" }
+                        new { Id = "Levi_Farrell19", AccessFailedCount = 0, Email = "Jessy_Gislason@hotmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 1L, NickName = "Annabell" },
+                        new { Id = "Jada_Kuphal90", AccessFailedCount = 0, Email = "Ramona_Cronin65@gmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 2L, NickName = "Teresa" },
+                        new { Id = "Howell.Wiegand", AccessFailedCount = 0, Email = "Ryleigh_Flatley74@gmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 3L, NickName = "Brendon" },
+                        new { Id = "Kieran.Sanford39", AccessFailedCount = 0, Email = "Cornelius.OConner@hotmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 4L, NickName = "Lindsey" },
+                        new { Id = "Amara_Gutkowski", AccessFailedCount = 0, Email = "Savanah_Huel@hotmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 5L, NickName = "Reva" },
+                        new { Id = "Alexander77", AccessFailedCount = 0, Email = "Matilde.Kreiger@hotmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 6L, NickName = "Rachelle" },
+                        new { Id = "Luna.Pfeffer93", AccessFailedCount = 0, Email = "Tessie_Dibbert@yahoo.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 7L, NickName = "Cesar" },
+                        new { Id = "Tremaine_Cruickshank", AccessFailedCount = 0, Email = "Dominique37@hotmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 8L, NickName = "Arnulfo" },
+                        new { Id = "Kelsie54", AccessFailedCount = 0, Email = "Marielle.McKenzie73@yahoo.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 9L, NickName = "Cooper" },
+                        new { Id = "Delbert.Feil", AccessFailedCount = 0, Email = "Theodore95@gmail.com", EmailConfirmed = true, LockoutEnabled = false, PhoneNumberConfirmed = true, TwoFactorEnabled = false, ApplicationsUserID = 10L, NickName = "Kathryne" }
                     );
                 });
 
