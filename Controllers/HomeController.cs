@@ -32,12 +32,35 @@ namespace PokemonForum.Controllers
         {
             //ViewData["Message"] = "Your application description page.";
 
-            var images = _context.Images.Where(a => a.isAvatar == false).ToList();
+            var images = _context.Images.Where(a => !a.isAvatar).ToList();
 
             var viewModel = new FanArtViewModel()
             {
                 Imagelist = images
             };
+
+            return View(viewModel);
+        }
+        [HttpPost]
+        public IActionResult FanArts(FanArtViewModel viewModel)
+        {
+            //ViewData["Message"] = "Your application description page.";
+
+            var newImag = new Image();
+            newImag.Name = viewModel.name;
+            newImag.Path = viewModel.path;
+            newImag.isAvatar = false;
+
+            _context.Images.Add(newImag);
+            _context.SaveChanges();
+
+            var images = _context.Images.Where(a => !a.isAvatar).ToList();
+
+            viewModel = new FanArtViewModel()
+            {
+                Imagelist = images
+            };
+
 
             return View(viewModel);
         }
@@ -49,39 +72,88 @@ namespace PokemonForum.Controllers
             {
                 threadList = _context.Threads.Where(a => a.ThreadID > 0).ToList()
             };
-            return View();
-        }
-
-        public IActionResult ForumThread(long ID)
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            var viewModel = new ForumThreadViewModel()
-            {
-                thread = _context.Threads.Find(ID)
-            };
-            return View();
+            return View(viewModel);
         }
         [HttpPost]
-        public IActionResult ForumThread(long ID, string text)
+        public IActionResult Forum(ForumViewModel viewModel)
         {
             ViewData["Message"] = "Your contact page.";
-            
-            var newArticle = new Article(); 
-            newArticle.Text = text;
-            newArticle.Thread = _context.Threads.Find(ID);
-            newArticle.Time = DateTime.Now;
-                        
-            _context.Articles.Update(newArticle);
+            Thread newthread = new Thread()
+            {
+                Title = viewModel.name
+            };
+            _context.Threads.Add(newthread);
             _context.SaveChanges();
 
-            var viewModel = new ForumThreadViewModel()
+            viewModel = new ForumViewModel()
             {
-                thread = _context.Threads.Find(ID)
+                threadList = _context.Threads.Where(a => a.ThreadID > 0).ToList()
             };
+            return View(viewModel);
+        }
+
+        public IActionResult ForumThread(long threadID)
+        {
+            ViewData["Message"] = "Your contact page.";
 
 
-            return View();
+            var viewModel = new ForumThreadViewModel();
+
+            viewModel.threadID = threadID;
+            try
+            {
+                viewModel.articlesList = _context.Threads.Include(t => t.Articles).Where(t => t.ThreadID == threadID).FirstOrDefault().Articles.ToList();
+            }
+            catch (System.Exception)
+            {
+                List<Article> al = new List<Article>();
+                al.Add(new Article
+                {
+                    Text = "no Article",
+                    Thread = _context.Threads.Find(viewModel.threadID)
+                });
+
+                viewModel.articlesList = al;
+            }
+
+
+            return View(viewModel);
+        }
+
+
+        [HttpPost]
+        public IActionResult ForumThread(ForumThreadViewModel viewModel)
+        {
+            ViewData["Message"] = "Your contact page.";
+
+            var newArticle = new Article();
+            newArticle.Text = viewModel.text;
+            newArticle.Thread = _context.Threads.Find(viewModel.threadID);
+            newArticle.Time = DateTime.Now;
+
+            _context.Articles.Add(newArticle);
+            _context.SaveChanges();
+
+            var viewModel2 = new ForumThreadViewModel();
+
+            viewModel2.threadID = viewModel.threadID;
+            try
+            {
+                viewModel2.articlesList = _context.Threads.Find(viewModel.threadID).Articles.Where(a => a.Thread.ThreadID == viewModel.threadID).ToList();
+            }
+            catch (System.Exception)
+            {
+                List<Article> al = new List<Article>();
+                al.Add(new Article
+                {
+                    Text = "no Article",
+                    Thread = _context.Threads.Find(viewModel.threadID)
+                });
+
+                viewModel2.articlesList = al;
+            }
+
+            return View(viewModel2);
         }
 
 

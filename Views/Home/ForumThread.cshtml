@@ -2,7 +2,19 @@
 @{
     ViewData["Title"] = " Forum";
 }
-<div class ="blocker"></div>
 
+<form action="Post" method="POST" >
 <input type="text" asp-for="text">
-<button  type="submit" asp-area="" asp-controller="Home" asp-action="ForumThread" >Senden</button>
+<input type="hidden" asp-for="threadID">
+<button   type="submit" asp-area="" asp-controller="Home" asp-action="ForumThread" >Senden</button>
+</form>
+<div class="">    
+    @foreach (var item in Model.articlesList)
+    {
+        <div>            
+        <div class="article">
+            @item.Text
+        </div>
+        </div>
+    }
+</div>

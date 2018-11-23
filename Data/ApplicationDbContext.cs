@@ -89,7 +89,8 @@ namespace PokemonForum.Data
                     ArticleID = article.ArticleID, // genau auf die Schreibweise achten! -> kein Intellisense
                     ThreadId =rnd.Next(1, threadIds),
                     Text = article.Text,
-                    Time = article.Time  
+                    Time = article.Time ,
+                    
                 });
             }
 

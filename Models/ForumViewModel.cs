@@ -7,5 +7,6 @@ namespace PokemonForum.Models
     public class ForumViewModel
     {
         public List<Thread> threadList {get;set;}
+        public string name{get;set;}
     } 
 }

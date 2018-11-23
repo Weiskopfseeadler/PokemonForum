@@ -8,7 +8,7 @@
     <title>@ViewData["Title"] - PokemonForum♥</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+          <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
@@ -19,18 +19,12 @@
     </environment>
 
 </head>
-<body>
-<div class="sidebar">
-    <img class="icon" src="images\Poke\charmanderoriginal[1].gif">
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
-</div>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-    
-        <img class="banner" src="~/images/Poke/bg-02.jpg" alt="Banner2">
+<body>
+  
+<header>
+ <nav class="navbar navbar-inverse navbar-fixed-top">    
+        <img class="banner  " src="~/images/Poke/bg-02.jpg" alt="Banner2">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -45,19 +39,28 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="FanArts">FanArts</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Forum">Forum</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="ForumThread">ForumThread</a></li>
+                   
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
         </div>
-    </nav>
+    </nav>  
+</header>
+<div class="asimai">
+    <aside class="sidebar" >    <img class="icon" src="~/images/Poke3/Glumagif.gif">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+    </aside>
+  
 
-    <div class="container body-content">
+    <main class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2018 - PokemonForum</p>
-        </footer>
+     
+    </main>
+    
     </div>
 
     <environment include="Development">
@@ -82,5 +85,9 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
+      <footer>
+            <p>&copy; 2018 - PokemonForum</p>
+        </footer>
 </body>
+ 
 </html>

@@ -115,7 +115,8 @@ namespace PokemonForum.Migrations
                     Text = table.Column<string>(nullable: true),
                     ThreadID = table.Column<long>(nullable: true),
                     Time = table.Column<DateTime>(nullable: false),
-                    ImageID = table.Column<long>(nullable: true)
+                    ImageID = table.Column<long>(nullable: true),
+                    UserId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -131,6 +132,12 @@ namespace PokemonForum.Migrations
                         column: x => x.ThreadID,
                         principalTable: "Threads",
                         principalColumn: "ThreadID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Articles_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -221,128 +228,128 @@ namespace PokemonForum.Migrations
 
             migrationBuilder.InsertData(
                 table: "Articles",
-                columns: new[] { "ArticleID", "ImageID", "Text", "ThreadID", "Time" },
-                values: new object[] { 3L, null, "autem-et-impedit-accusamus-perferendis-odio-dolor-saepe-fugiat-id-eum-porro-facere-est-rerum-nulla-odio-possimus-ut-eos-neque-sed-ut-amet-eum-voluptas-aut-ex-ut-rem-assumenda-ad-et-rerum-qui-reiciendis-officiis-qui-voluptatibus-aut-rerum-voluptas-doloremque-soluta-necessitatibus-quia-error-placeat-saepe-tempora-pariatur-enim-eius-eum-error-aliquam-reiciendis-occaecati-atque-ipsum-quidem-dolorem-perspiciatis-ea-ut-omnis-numquam-accusamus-enim-distinctio-aut-dolorum-omnis-quaerat-eius-qui-molestias-qui-exercitationem-veritatis-minima-illo-praesentium-quia-fuga-blanditiis-illo-sed-voluptatem-velit-repellat-aliquid-suscipit-vel-laboriosam-illum-eius-libero-impedit-suscipit", null, new DateTime(2018, 10, 15, 19, 4, 26, 326, DateTimeKind.Local) });
+                columns: new[] { "ArticleID", "ImageID", "Text", "ThreadID", "Time", "UserId" },
+                values: new object[] { 3L, null, "reiciendis-ullam-deleniti-delectus-in-cupiditate-beatae-consequuntur-iusto-et-exercitationem-ut-nostrum-possimus-aut-sed-error-vel-ad-consectetur-cumque-et-labore-suscipit-explicabo-ut-vitae-porro-ut-quod-at-est-pariatur-labore-et-repellat-velit-maxime-reiciendis-consequatur-corporis-nemo-esse-doloribus-temporibus-aut-debitis-facilis-sint-possimus-fugit-tempora-corporis-eos-et-ut-veritatis-ratione-accusamus-tempora-dignissimos-commodi-vero-optio-facilis-id-iure-illo-a-consequatur-alias-qui-quo-et-rerum-reprehenderit-numquam-dolore-unde-sed-totam-iusto-quibusdam-molestias-et-et-iure-doloribus-ipsum-qui-recusandae-illo-officiis-placeat-molestiae-earum-ducimus-quisquam-ut-sit", null, new DateTime(2018, 4, 22, 20, 2, 42, 156, DateTimeKind.Local), null });
 
             migrationBuilder.InsertData(
                 table: "Articles",
-                columns: new[] { "ArticleID", "ImageID", "Text", "ThreadID", "Time" },
-                values: new object[] { 5L, null, "ducimus-et-placeat-ipsam-magnam-animi-animi-iusto-eos-quod-repellendus-sint-magni-in-provident-officiis-vel-laborum-consequatur-quo-qui-sint-eos-quo-deleniti-corporis-aut-magnam-ut-a-labore-beatae-delectus-harum-et-molestiae-esse-harum-magni-ullam-vitae-nobis-sunt-nihil-iure-qui-fugit-debitis-vel-dolor-quis-unde-sed-aliquam-quisquam-non-possimus-voluptates-quo-rerum-quisquam-ut-dicta-ut-et-nihil-omnis-dolores-et-odit-praesentium-sit-atque-impedit-possimus-blanditiis-molestiae-sequi-qui-laboriosam-consectetur-alias-odio-ipsum-officia-eligendi-perspiciatis-impedit-repudiandae-asperiores-libero-molestias-quibusdam-sit-in-minus-mollitia-amet-sed-soluta", null, new DateTime(2018, 4, 21, 21, 35, 1, 431, DateTimeKind.Local) });
+                columns: new[] { "ArticleID", "ImageID", "Text", "ThreadID", "Time", "UserId" },
+                values: new object[] { 5L, null, "ut-debitis-est-quos-et-sint-unde-maxime-aut-iste-alias-corrupti-ipsam-molestias-quia-nisi-qui-necessitatibus-quibusdam-nisi-voluptas-debitis-voluptate-impedit-odio-expedita-id-nulla-rerum-qui-dolorum-molestias-omnis-minima-non-eius-quam-vitae-nisi-molestiae-voluptatem-est-ut-ratione-iste-a-et-corrupti-qui-labore-sed-accusamus-debitis-vero-autem-voluptatem-totam-earum-illo-nulla-sit-nihil-odit-voluptate-recusandae-quos-itaque-aperiam-culpa-maiores-molestiae-quis-unde-accusamus-quia-adipisci-laboriosam-voluptatem-voluptatem-deleniti-accusantium-magnam-sed-ea-eos-placeat-harum-eligendi-et-et-facere-deleniti-doloremque-et-maxime-voluptatem-perspiciatis-magni-non-et", null, new DateTime(2018, 11, 15, 13, 3, 14, 297, DateTimeKind.Local), null });
 
             migrationBuilder.InsertData(
                 table: "Articles",
-                columns: new[] { "ArticleID", "ImageID", "Text", "ThreadID", "Time" },
-                values: new object[] { 4L, null, "eligendi-deleniti-ut-magnam-tempora-sed-sapiente-dolorem-dolorem-maxime-reprehenderit-modi-nihil-necessitatibus-qui-commodi-quam-minus-sint-dolores-aspernatur-omnis-architecto-distinctio-fuga-veniam-sapiente-et-in-dolor-quo-debitis-sapiente-a-officia-in-tempora-officiis-qui-sint-explicabo-tenetur-voluptatem-qui-est-consequuntur-repudiandae-et-possimus-qui-quibusdam-itaque-adipisci-quo-consequatur-qui-ea-sunt-et-rerum-in-ipsa-voluptas-doloribus-voluptates-sint-voluptatem-totam-corporis-consequatur-eos-unde-suscipit-mollitia-ea-ratione-in-dolorum-illo-dolores-quis-ipsa-dolorem-hic-vel-ut-soluta-quia-hic-dignissimos-ipsum-expedita-et-qui-nisi-illo-amet-nesciunt-perspiciatis-sunt", null, new DateTime(2018, 1, 12, 7, 12, 36, 860, DateTimeKind.Local) });
+                columns: new[] { "ArticleID", "ImageID", "Text", "ThreadID", "Time", "UserId" },
+                values: new object[] { 4L, null, "dolorem-est-aut-possimus-nostrum-reprehenderit-qui-aut-cum-dolores-illum-animi-facere-possimus-aut-similique-aliquid-quasi-sit-numquam-in-aut-quas-officiis-hic-hic-dicta-voluptatibus-rerum-earum-dolores-ut-commodi-provident-facilis-maxime-nobis-facere-suscipit-ut-asperiores-perferendis-dolores-ipsam-sed-blanditiis-sed-doloribus-repudiandae-quis-aspernatur-est-sit-ut-amet-earum-amet-labore-consequatur-laboriosam-corporis-velit-accusantium-minus-rerum-repudiandae-labore-eius-fugit-ut-aut-animi-minus-dolor-modi-eum-eum-amet-facere-dolores-eum-aspernatur-quasi-sunt-voluptas-nulla-sunt-qui-nisi-nihil-iste-dignissimos-rerum-repellat-recusandae-culpa-doloribus-omnis-cum-sed", null, new DateTime(2018, 9, 5, 6, 19, 27, 220, DateTimeKind.Local), null });
 
             migrationBuilder.InsertData(
                 table: "Articles",
-                columns: new[] { "ArticleID", "ImageID", "Text", "ThreadID", "Time" },
-                values: new object[] { 2L, null, "et-qui-dolores-sint-voluptate-alias-dolorum-odit-non-temporibus-sunt-temporibus-vero-soluta-sit-molestiae-voluptas-quisquam-minima-sint-quia-nam-quo-libero-voluptatem-odio-ratione-adipisci-reiciendis-ipsum-eos-necessitatibus-aut-blanditiis-repellat-minima-quas-soluta-dignissimos-reprehenderit-et-velit-dolorem-odit-molestiae-perspiciatis-adipisci-molestiae-laborum-nostrum-quia-quisquam-quasi-ipsam-deserunt-in-natus-laudantium-commodi-ut-vero-molestiae-consequuntur-possimus-et-soluta-illum-in-nobis-et-nihil-neque-minima-necessitatibus-quam-omnis-voluptas-qui-maxime-est-dolore-eius-culpa-est-repellat-esse-qui-expedita-eos-quam-porro-eaque-voluptatem-rem-provident-quasi-quis-quasi-blanditiis-et", null, new DateTime(2018, 3, 3, 17, 15, 0, 210, DateTimeKind.Local) });
+                columns: new[] { "ArticleID", "ImageID", "Text", "ThreadID", "Time", "UserId" },
+                values: new object[] { 2L, null, "est-sunt-et-velit-omnis-et-laudantium-quaerat-alias-quasi-rem-et-adipisci-laborum-inventore-expedita-voluptatibus-nihil-enim-architecto-autem-exercitationem-perferendis-occaecati-et-labore-voluptas-culpa-maiores-rerum-ut-ut-temporibus-quo-rerum-rerum-ut-totam-earum-eum-nulla-tenetur-ea-maxime-dolorum-ut-praesentium-accusantium-eveniet-ad-sunt-aut-occaecati-ex-vero-qui-natus-dolores-exercitationem-sed-aut-rerum-ad-commodi-ipsum-sunt-dolores-atque-qui-esse-nemo-sint-atque-odio-tempora-quam-saepe-ut-eveniet-consequatur-dolor-ullam-soluta-impedit-omnis-saepe-vel-iusto-at-quos-vitae-non-ipsum-ea-est-sapiente-soluta-eaque-in-ab", null, new DateTime(2018, 2, 16, 22, 22, 25, 64, DateTimeKind.Local), null });
 
             migrationBuilder.InsertData(
                 table: "Articles",
-                columns: new[] { "ArticleID", "ImageID", "Text", "ThreadID", "Time" },
-                values: new object[] { 1L, null, "tenetur-beatae-rem-voluptas-dolorem-distinctio-dolores-labore-ipsam-dolorem-voluptas-molestias-nostrum-asperiores-voluptatum-illum-et-minima-facilis-ut-dolore-officia-ut-voluptatum-nobis-et-aut-recusandae-velit-maxime-voluptatem-qui-illum-officiis-quaerat-enim-sit-consequuntur-non-expedita-omnis-inventore-aut-accusantium-enim-praesentium-nam-magni-ullam-alias-saepe-possimus-laborum-ullam-sed-commodi-vel-asperiores-beatae-et-vero-natus-eaque-sunt-cum-eaque-eligendi-quam-minus-dolorem-corrupti-corrupti-facere-doloribus-adipisci-consectetur-in-labore-sed-modi-et-cum-quidem-adipisci-pariatur-qui-sed-occaecati-facere-saepe-dolores-suscipit-ab-est-quibusdam-numquam-sit-odio-aliquid-incidunt", null, new DateTime(2018, 2, 16, 1, 53, 31, 231, DateTimeKind.Local) });
+                columns: new[] { "ArticleID", "ImageID", "Text", "ThreadID", "Time", "UserId" },
+                values: new object[] { 1L, null, "voluptatem-quia-nesciunt-voluptates-sequi-eveniet-et-et-non-amet-nobis-voluptatibus-dolorem-inventore-et-nobis-est-temporibus-voluptas-et-iusto-voluptates-aut-voluptatem-assumenda-delectus-dolorum-ut-deserunt-iure-expedita-corporis-reprehenderit-quia-tempora-aliquam-a-autem-dolorem-incidunt-qui-quisquam-sunt-voluptatem-aut-dolorem-reprehenderit-ea-ut-molestiae-tempore-qui-repellat-quia-porro-voluptate-neque-eos-eos-amet-ad-expedita-est-eos-provident-vel-deserunt-cumque-fugiat-laborum-est-saepe-delectus-sed-repudiandae-quo-suscipit-eligendi-numquam-rerum-in-numquam-alias-nam-porro-quaerat-nemo-numquam-ea-illum-explicabo-qui-expedita-rerum-a-non-architecto-et-temporibus-molestiae", null, new DateTime(2018, 8, 30, 6, 25, 40, 982, DateTimeKind.Local), null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "ApplicationsUserID", "AvatarImageID", "NickName", "Password" },
-                values: new object[] { "Delbert.Feil", 0, null, "ApplicationsUser", "Theodore95@gmail.com", true, false, null, null, null, null, null, true, null, false, null, 10L, null, "Kathryne", null });
+                values: new object[] { "Nathan.Huel29", 0, null, "ApplicationsUser", "Darren96@yahoo.com", true, false, null, null, null, null, null, true, null, false, null, 10L, null, "Damon", null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "ApplicationsUserID", "AvatarImageID", "NickName", "Password" },
-                values: new object[] { "Kelsie54", 0, null, "ApplicationsUser", "Marielle.McKenzie73@yahoo.com", true, false, null, null, null, null, null, true, null, false, null, 9L, null, "Cooper", null });
+                values: new object[] { "Shanie.Parker86", 0, null, "ApplicationsUser", "Cameron.Robel@hotmail.com", true, false, null, null, null, null, null, true, null, false, null, 9L, null, "Dana", null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "ApplicationsUserID", "AvatarImageID", "NickName", "Password" },
-                values: new object[] { "Levi_Farrell19", 0, null, "ApplicationsUser", "Jessy_Gislason@hotmail.com", true, false, null, null, null, null, null, true, null, false, null, 1L, null, "Annabell", null });
+                values: new object[] { "Laurence.Upton16", 0, null, "ApplicationsUser", "Kaela.Daugherty78@gmail.com", true, false, null, null, null, null, null, true, null, false, null, 1L, null, "Enrique", null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "ApplicationsUserID", "AvatarImageID", "NickName", "Password" },
-                values: new object[] { "Luna.Pfeffer93", 0, null, "ApplicationsUser", "Tessie_Dibbert@yahoo.com", true, false, null, null, null, null, null, true, null, false, null, 7L, null, "Cesar", null });
+                values: new object[] { "Jasen.Crist38", 0, null, "ApplicationsUser", "Leola.Steuber8@gmail.com", true, false, null, null, null, null, null, true, null, false, null, 7L, null, "Laisha", null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "ApplicationsUserID", "AvatarImageID", "NickName", "Password" },
-                values: new object[] { "Alexander77", 0, null, "ApplicationsUser", "Matilde.Kreiger@hotmail.com", true, false, null, null, null, null, null, true, null, false, null, 6L, null, "Rachelle", null });
+                values: new object[] { "Orland51", 0, null, "ApplicationsUser", "Doyle_Tillman@hotmail.com", true, false, null, null, null, null, null, true, null, false, null, 6L, null, "Sandra", null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "ApplicationsUserID", "AvatarImageID", "NickName", "Password" },
-                values: new object[] { "Amara_Gutkowski", 0, null, "ApplicationsUser", "Savanah_Huel@hotmail.com", true, false, null, null, null, null, null, true, null, false, null, 5L, null, "Reva", null });
+                values: new object[] { "Damaris.Lockman68", 0, null, "ApplicationsUser", "Rory20@hotmail.com", true, false, null, null, null, null, null, true, null, false, null, 5L, null, "Raoul", null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "ApplicationsUserID", "AvatarImageID", "NickName", "Password" },
-                values: new object[] { "Kieran.Sanford39", 0, null, "ApplicationsUser", "Cornelius.OConner@hotmail.com", true, false, null, null, null, null, null, true, null, false, null, 4L, null, "Lindsey", null });
+                values: new object[] { "Jadyn.Keeling", 0, null, "ApplicationsUser", "Hershel72@hotmail.com", true, false, null, null, null, null, null, true, null, false, null, 4L, null, "Audra", null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "ApplicationsUserID", "AvatarImageID", "NickName", "Password" },
-                values: new object[] { "Howell.Wiegand", 0, null, "ApplicationsUser", "Ryleigh_Flatley74@gmail.com", true, false, null, null, null, null, null, true, null, false, null, 3L, null, "Brendon", null });
+                values: new object[] { "Darius.Kilback", 0, null, "ApplicationsUser", "Macie8@gmail.com", true, false, null, null, null, null, null, true, null, false, null, 3L, null, "Brando", null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "ApplicationsUserID", "AvatarImageID", "NickName", "Password" },
-                values: new object[] { "Jada_Kuphal90", 0, null, "ApplicationsUser", "Ramona_Cronin65@gmail.com", true, false, null, null, null, null, null, true, null, false, null, 2L, null, "Teresa", null });
+                values: new object[] { "Khalil_Schuppe70", 0, null, "ApplicationsUser", "Ryleigh67@gmail.com", true, false, null, null, null, null, null, true, null, false, null, 2L, null, "Katharina", null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "ApplicationsUserID", "AvatarImageID", "NickName", "Password" },
-                values: new object[] { "Tremaine_Cruickshank", 0, null, "ApplicationsUser", "Dominique37@hotmail.com", true, false, null, null, null, null, null, true, null, false, null, 8L, null, "Arnulfo", null });
+                values: new object[] { "Guy_Kirlin88", 0, null, "ApplicationsUser", "Donnie.Schowalter@gmail.com", true, false, null, null, null, null, null, true, null, false, null, 8L, null, "Freddy", null });
 
             migrationBuilder.InsertData(
                 table: "Images",
                 columns: new[] { "ImageID", "Name", "Path", "isAvatar" },
-                values: new object[] { 5L, "DuBuque", "~/images/nothing.jpg", false });
+                values: new object[] { 5L, "Mitchell", "~/images/nothing.jpg", true });
 
             migrationBuilder.InsertData(
                 table: "Images",
                 columns: new[] { "ImageID", "Name", "Path", "isAvatar" },
-                values: new object[] { 4L, "Mertz", "~/images/nothing.jpg", false });
+                values: new object[] { 4L, "Bayer", "~/images/nothing.jpg", true });
 
             migrationBuilder.InsertData(
                 table: "Images",
                 columns: new[] { "ImageID", "Name", "Path", "isAvatar" },
-                values: new object[] { 2L, "Gaylord", "~/images/nothing.jpg", false });
+                values: new object[] { 2L, "Kilback", "~/images/nothing.jpg", true });
 
             migrationBuilder.InsertData(
                 table: "Images",
                 columns: new[] { "ImageID", "Name", "Path", "isAvatar" },
-                values: new object[] { 1L, "McKenzie", "~/images/nothing.jpg", true });
+                values: new object[] { 1L, "Wunsch", "~/images/nothing.jpg", true });
 
             migrationBuilder.InsertData(
                 table: "Images",
                 columns: new[] { "ImageID", "Name", "Path", "isAvatar" },
-                values: new object[] { 3L, "Ankunding", "~/images/nothing.jpg", false });
+                values: new object[] { 3L, "Bartell", "~/images/nothing.jpg", false });
 
             migrationBuilder.InsertData(
                 table: "Threads",
                 columns: new[] { "ThreadID", "Title" },
-                values: new object[] { 4L, "ipsam-enim-exercitationem-voluptas-at-eaque-ut-a" });
+                values: new object[] { 4L, "magni-molestias-sapiente-aut-molestias-quos-aut-eius" });
 
             migrationBuilder.InsertData(
                 table: "Threads",
                 columns: new[] { "ThreadID", "Title" },
-                values: new object[] { 1L, "et-molestias-quidem-sapiente-et-ut-sint-sed" });
+                values: new object[] { 1L, "et-reprehenderit-assumenda-saepe-aut-in-aut-occaecati" });
 
             migrationBuilder.InsertData(
                 table: "Threads",
                 columns: new[] { "ThreadID", "Title" },
-                values: new object[] { 2L, "excepturi-et-eos-molestiae-impedit-sit-aliquam-amet" });
+                values: new object[] { 2L, "excepturi-sunt-sit-dicta-in-sed-placeat-nulla" });
 
             migrationBuilder.InsertData(
                 table: "Threads",
                 columns: new[] { "ThreadID", "Title" },
-                values: new object[] { 3L, "maiores-dicta-ut-numquam-iure-et-saepe-ex" });
+                values: new object[] { 3L, "et-veritatis-ad-perspiciatis-et-sed-cumque-reiciendis" });
 
             migrationBuilder.InsertData(
                 table: "Threads",
                 columns: new[] { "ThreadID", "Title" },
-                values: new object[] { 5L, "quia-omnis-illum-excepturi-aperiam-aliquam-enim-commodi" });
+                values: new object[] { 5L, "laudantium-dolores-laborum-ea-amet-voluptas-tempore-sequi" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Articles_ImageID",
@@ -353,6 +360,11 @@ namespace PokemonForum.Migrations
                 name: "IX_Articles_ThreadID",
                 table: "Articles",
                 column: "ThreadID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Articles_UserId",
+                table: "Articles",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

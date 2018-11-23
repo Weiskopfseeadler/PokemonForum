@@ -5,8 +5,9 @@ using ForumPokemon.Models;
 namespace PokemonForum.Models
 {
     public class ForumThreadViewModel{
-      public  Thread thread;
-      public string text;
+      public  long threadID {get; set;}
+      public string text{get; set;}
+      public List<Article> articlesList {get; set;}
 
     }
     }

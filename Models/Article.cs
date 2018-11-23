@@ -10,5 +10,6 @@ namespace ForumPokemon.Models
         public Thread Thread {get; set;}
         public DateTime Time {get; set;}
         public Image Image {get; set;}
+       
     }
 }
