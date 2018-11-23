@@ -1,11 +1,71 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 .banner {
-    max-height: 15vh;
+    
     width: 100%;
+    height: 15vh;
+
 }
-.blocker{
-    margin-top: 20vh;
+.container{
+    height: 5vh;
+   
+}
+  
+header{
+    flex: 25vh;
+}
+
+nav{    
+    background-color: #FF8900;
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+}
+.asimai{
+    flex: 50;
+    display: flex;
+flex-direction: row
+
+}
+
+html{
+    height: 100%;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #F79800;
+}
+main{
+    flex: 70;
+    height: 100%;
+}
+aside{
+    flex: 10;         
+    display: flex;
+    flex-direction: column;
+}   
+
+a {
+    background-color: #FF8900;
+    color: #D64200;
+    padding: 10px;
+    word-wrap: break-word;
+}
+aside a{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+     font-size: 20px;
+}
+
+.sidebar h1{
+    font-size: 10px;
+    
+}
+footer{
+    height: 7vh;
 }
 
 .navbar-inverse{
@@ -18,19 +78,30 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 .fanArtDisplay{
     display: flex;
-    margin-top: 50vh;
+    flex-wrap: wrap;
 }
+.fanArt {
+    max-width: 25vw;
+    max-height: 20vh;
+    margin: 1vh;
+   
+    }
+    .Form{
+        display: flex;
+        flex-direction: column
+    }
+    .Form button{
+        height: 3vh;
+    }
+   
 
-.navbar-inverse .btn-link {
+.navbar-inverse .btn-link { 
     color: #D64200;
     font-size: 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.fanArt {
-max-width: 60vw;
-max-height: 30vh; 
-}
+
 
 .navbar-inverse .navbar-brand:hover {
     background-color: #EB6200;
@@ -65,35 +136,6 @@ max-height: 30vh;
     margin-top: 15vh;
 }
 
-.sidebar{
-    margin-top: 15vh;
-    text-align: left;
-    position: fixed;
-    left: 0;
-    height: 100%;
-    width: 10vh;
-}
-
-.sidebar a{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-     font-size: 20px;
-}
-
-.sidebar h1{
-    font-size: 10px;
-    padding: 10px;
-}
-
-a {
-    color: #D64200;
-    padding: 10px;
-}
-
-body {
-    padding-top: 50px;
-    padding-bottom: 100px;
-    background: #F79800;
-}
 
 .icon {
     width: 12vh;
@@ -102,11 +144,7 @@ body {
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: 10vh;
-}
+
 
 /* Carousel */
 .carousel-caption p {
@@ -120,7 +158,7 @@ body {
 }
 
 /* QR code generator */
-#qrCode {
+#qrCode {       
     margin: 15px;
 }
 

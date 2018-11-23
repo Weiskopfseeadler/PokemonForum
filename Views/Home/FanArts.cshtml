@@ -2,10 +2,20 @@
 @{
     ViewData["Title"] = "FanArts";
 }
-<div class ="blocker"></div>
+
 <div class="fanArtDisplay">
+    <img  class="fanArt" src="~/images/Poke2/bg-08.jpg" alt="asdsad">
     @foreach (var imag in Model.Imagelist) 
     {    
-        <img class="fanArt" src= imag.Path alt=imag.Name>
+        <img class="fanArt" src="~/images/@imag.Path" alt="@imag.Name">
     }
+    <div class="fanArt">
+ 
+    </div>
+       <form class="Form" method="POST">
+<input type="text" asp-for="name" >
+<input type="text" asp-for="path" >
+<button type="submit">Senden</button>
+    </form>
+
 </div>

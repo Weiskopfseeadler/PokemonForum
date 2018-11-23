@@ -32,7 +32,7 @@ namespace PokemonForum.Controllers
         {
             //ViewData["Message"] = "Your application description page.";
 
-            var images = _context.Images.Where(a => a.isAvatar == false).ToList();
+            var images = _context.Images.Where(a => !a.isAvatar).ToList();
 
             var viewModel = new FanArtViewModel()
             {
@@ -40,6 +40,22 @@ namespace PokemonForum.Controllers
             };
 
             return View(viewModel);
+        }
+        [HttpPost]
+        public IActionResult FanArts(FanArtViewModel viewModel)
+        {
+            //ViewData["Message"] = "Your application description page.";
+
+            var newImag = new Image();
+            newImag.Name = viewModel.name;
+            newImag.Path = viewModel.path;
+            newImag.isAvatar = false;
+
+            _context.Images.Add(newImag);
+            _context.SaveChanges();
+
+
+            return View();
         }
         public IActionResult Forum()
         {
@@ -49,13 +65,13 @@ namespace PokemonForum.Controllers
             {
                 threadList = _context.Threads.Where(a => a.ThreadID > 0).ToList()
             };
-            return View();
+            return View(viewModel);
         }
 
         public IActionResult ForumThread(long ID)
         {
             ViewData["Message"] = "Your contact page.";
-          
+
             var viewModel = new ForumThreadViewModel()
             {
                 thredID = Convert.ToString(ID),
@@ -69,12 +85,12 @@ namespace PokemonForum.Controllers
         public IActionResult ForumThread(ForumThreadViewModel viewModel)
         {
             ViewData["Message"] = "Your contact page.";
-            
-            var newArticle = new Article(); 
+
+            var newArticle = new Article();
             newArticle.Text = viewModel.text;
             newArticle.Thread = _context.Threads.Find(viewModel.thredID);
             newArticle.Time = DateTime.Now;
-                        
+
             _context.Articles.Add(newArticle);
             _context.SaveChanges();
 
